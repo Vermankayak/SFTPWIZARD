@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Welcome to the Web Application</h1>
+        <p>This is a simple web application.</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <input type="text" id="rollNoInput" placeholder="Enter your roll number">
+        <button id="submitButton">Submit</button>
+
+        <script>
+            // JavaScript code to handle user interactions
+            // document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('submitButton').addEventListener("click", function(){
+                const name = document.getElementById('nameInput').value;
+                const rollNo = document.getElementById('rollNoInput').value;
+                student1 = new Student(rollNo, name);
+                console.log(student1);
+                document.body.innerHTML += "<h2>My name is " + student1.name + "</h2>";
+                document.body.innerHTML += "<h2>My roll No is " + student1.rollNo + "</h2>";
+
+            });
+
+            class Student{// stores all within parenthesis into the RAM
+                //HAS-A (instance variables)
+                rollNo=0;
+                name="";
+                
+                //mandatory method required in every class to set value of instance variables
+                constructor(rollNoA, nameA){
+                this.rollNo=rollNoA;//this points at currently executing object.
+                this.name=nameA;
+                }
+                
+                //DOES relationship
+                study(){
+                    console.log(`My name is ${this.name} and My roll No is ${this.rollNo} and I am studying`);
+                }
+                
+                
+            }
+        
+            // console.log(student1);
+            // console.log(student1.study());
+            // console.log("My current html file =====> ",document);
+            // console.log("My current html file's body =====> ",document.body.innerHTML, typeof document.body.innerHTML);
+            // document.body.innerHTML += "<h2>My name is " + student1.name + "</h2>";
+            // document.body.innerHTML += "<h2>My roll No is " + student1.rollNo + "</h2>";
+        </script>
+    </body>
+</html>
+
+<!---whenever a operation ends, it generates an event (pre-defined event), listener--->
